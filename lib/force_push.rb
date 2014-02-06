@@ -1,4 +1,5 @@
 require "force_push/version"
+require 'databasedotcom'
 
 module ForcePush
   class Client
