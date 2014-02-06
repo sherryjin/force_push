@@ -1,0 +1,24 @@
+# -*- encoding: utf-8 -*-
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'force_push/version'
+
+Gem::Specification.new do |gem|
+  gem.name          = "force_push"
+  gem.version       = ForcePush::VERSION
+  gem.authors       = ["Sherry Jin"]
+  gem.email         = ["sherry@newrelic.com"]
+  gem.description   = %q{Connect to Salesforce}
+  gem.summary       = %q{Sync data to Salesforce objects}
+  gem.homepage      = ""
+
+  gem.files         = `git ls-files`.split($/)
+  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
+  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
+  gem.require_paths = ["lib"]
+
+  gem.add_dependency 'databasedotcom', '~> 1.3.2'
+  gem.add_development_dependency "rspec", "~> 2.6" 
+  gem.add_development_dependency "pry"
+  gem.add_development_dependency "pry-nav"
+end
